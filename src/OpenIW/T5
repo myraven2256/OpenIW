@@ -4,4 +4,21 @@ add_executable(T5
   ${T5}
 )
 
+set_target_properties(T5
+PROPERTIES
+  VS_PLATFORM_TOOLSET "v90"
+)
+
+target_link_libraries(T5
+PRIVATE
+  reflective_pe_xp
+  patches_xp
+)
+
+target_link_options(T5
+PRIVATE
+    /DYNAMICBASE:NO /NXCOMPAT:NO /SAFESEH:NO /INCREMENTAL:NO /LARGEADDRESSAWARE
+    /LAST:.text
+)
+
 target_create_vcxproj_filters(T5)

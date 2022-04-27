@@ -4,4 +4,16 @@ add_executable(IW5
   ${IW5}
 )
 
+target_link_libraries(IW5
+PRIVATE
+  reflective_pe
+  patches
+)
+
+target_link_options(IW5
+PRIVATE
+    /DYNAMICBASE:NO /NXCOMPAT:NO /SAFESEH:NO /INCREMENTAL:NO /LARGEADDRESSAWARE
+    /LAST:.text
+)
+
 target_create_vcxproj_filters(IW5)

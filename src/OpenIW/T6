@@ -4,4 +4,16 @@ add_executable(T6
   ${T6}
 )
 
+target_link_libraries(T6
+PRIVATE
+  reflective_pe
+  patches
+)
+
+target_link_options(T6
+PRIVATE
+    /DYNAMICBASE:NO /NXCOMPAT:NO /SAFESEH:NO /INCREMENTAL:NO /LARGEADDRESSAWARE
+    /LAST:.text
+)
+
 target_create_vcxproj_filters(T6)
