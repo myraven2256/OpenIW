@@ -1,3 +1,6 @@
 [submodule "src/goldberg_emulator"]
 	path = src/goldberg_emulator
 	url = https://github.com/OpenIW/goldberg_emulator.git
+[submodule "src/reflective_pe"]
+	path = src/reflective_pe
+	url = https://github.com/OpenIW/reflective_pe.git

@@ -1,6 +1,6 @@
 file(GLOB_RECURSE T5 RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.cpp *.h)
 
-add_executable(T5 WIN32
+add_executable(T5
   ${T5}
 )
 

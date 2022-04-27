@@ -30,14 +30,15 @@ function(target_create_vcxproj_filters target_name)
 endfunction()
 
 # Available build configuration of the IW Engine with IDEs that support multiple configurations.
-# if(CMAKE_CONFIGURATION_TYPES)
-#   set(CMAKE_CONFIGURATION_TYPES IW3 IW4 IW5 T5 T6)
-#   foreach(configuration IN LISTS CMAKE_CONFIGURATION_TYPES)
-#     set(CMAKE_C_FLAGS_${configuration} "${CMAKE_C_FLAGS} -D${configuration}")
-#     set(CMAKE_CXX_FLAGS_${configuration} "${CMAKE_CXX_FLAGS} -D${configuration}")
-#     set(CMAKE_EXE_LINKER_FLAGS_${configuration} "${CMAKE_EXE_LINKER_FLAGS}")
-#   endforeach()
-# endif()
+if(CMAKE_CONFIGURATION_TYPES)
+  set(CMAKE_CONFIGURATION_TYPES IW3 IW4 IW5 T5 T6)
+  foreach(configuration IN LISTS CMAKE_CONFIGURATION_TYPES)
+    set(CMAKE_C_FLAGS_${configuration} "${CMAKE_C_FLAGS} -D${configuration}")
+    set(CMAKE_CXX_FLAGS_${configuration} "${CMAKE_CXX_FLAGS} -D${configuration}")
+    set(CMAKE_EXE_LINKER_FLAGS_${configuration} "${CMAKE_EXE_LINKER_FLAGS}")
+    set(CMAKE_SHARED_LINKER_FLAGS_${configuration} "${CMAKE_SHARED_LINKER_FLAGS}")
+  endforeach()
+endif()
 
 # Disable in-source builds to avoid cluttering the source tree with generated CMake files.
 if ("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")

@@ -1,6 +1,6 @@
 file(GLOB_RECURSE IW4 RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.cpp *.h)
 
-add_executable(IW4 WIN32
+add_executable(IW4
   ${IW4}
 )
 
