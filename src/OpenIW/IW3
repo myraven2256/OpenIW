@@ -1,0 +1,12 @@
+file(GLOB_RECURSE IW3 RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.cpp *.h)
+
+add_executable(IW3 WIN32
+  ${IW3}
+)
+
+set_target_properties(IW3
+PROPERTIES
+  VS_PLATFORM_TOOLSET "v90"
+)
+
+target_create_vcxproj_filters(IW3)

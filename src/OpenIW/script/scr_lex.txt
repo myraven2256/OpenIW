@@ -1,0 +1,39 @@
+//! @file
+//! SPDX-License-Identifier: GPL-3.0-or-later
+
+
+#ifdef    __UNIMPLEMENTED__
+
+static void TextValue(char* str, int len)
+{
+
+}
+
+#endif // __UNIMPLEMENTED__
+
+#ifdef    __UNIMPLEMENTED__
+
+static int StringValue(char* str, int len)
+{
+
+}
+
+#endif // __UNIMPLEMENTED__
+
+#ifdef    __UNIMPLEMENTED__
+
+static void IntegerValue(char* str)
+{
+
+}
+
+#endif // __UNIMPLEMENTED__
+
+#ifdef    __UNIMPLEMENTED__
+
+static void FloatValue(char* str)
+{
+
+}
+
+#endif // __UNIMPLEMENTED__

@@ -1,0 +1,31 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install
+        run: |
+          sudo apt-add-repository universe
+          sudo apt-get update
+          sudo apt-get install -y graphviz
+          sudo apt-get install -y doxygen
+          sudo apt-get install -y python
+          sudo apt-get install -y python3-pip
+          sudo pip3 install poxy
+
+      - name: Build
+        run: |
+          cd docs
+          poxy
+
+      - name: Publish
+        uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
+        with:
+          dir: docs/html
+          branch: gh-pages
+          token: ${{ secrets.ACCESS_TOKEN }}

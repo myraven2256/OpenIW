@@ -1,0 +1,3 @@
+[submodule "src/goldberg_emulator"]
+	path = src/goldberg_emulator
+	url = https://github.com/OpenIW/goldberg_emulator.git

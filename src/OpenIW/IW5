@@ -1,0 +1,7 @@
+file(GLOB_RECURSE IW5 RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.cpp *.h)
+
+add_executable(IW5 WIN32
+  ${IW5}
+)
+
+target_create_vcxproj_filters(IW5)
